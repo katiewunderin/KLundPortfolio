@@ -1,57 +1,210 @@
-@media (max-width: 600px) {
-    h1 {
-      font-size: 18px;
-      text-align: center;
-    }
-  
-    .footer {
-      display: none;
-    }
-  }
-  
-  @media (min-width: 200px) {
-    h1 {
-      color: red;
-      font-size: 100px;
-    }
-  }
-:root {
-    --main-theme-color: #0e5f76;
-    --box-shadow: #0c2233;
-    --main-secondary-color: #136f89;
-    --main-border: #083d56;
-    --main-padding: 5px 4px 4px 5px;
-}
 body {
-    background: linear-gradient(
-    115deg, 
-    rgb(119, 102, 214), 
-    rgb(98, 155, 193)
-    );
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed;
-    padding: 10px; 
-    align-content: center;
+  background:url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/161/478/original/Elegant_alcohol_ink_hand_painted_background_2401.jpg?1743054308);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  padding: 10px; 
+  align-content: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero section */
+.Hero{
+  text-align: center;
+  font-weight: 600;
+  color: #FFF8E1;
+}
+
+/* Navigation buttons */
+.index-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.index-buttons button {
+  border:none;
+  background-color:#D4AF37;
+  padding: 10px 20px;
+  font-size: 16px;
+  color:  #000066;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.4s ease-in-out;
+}
+
+.index-buttons button:hover {
+  background-color: #DCA1A1;
+  color: black;
+}
+
+.index-buttons a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+/* Link styles */
 a:visited {
-    color: rgb(235, 32, 32);
-  }
-  a:hover {
-    color: pink;
-  }
+  color: #c7bcdb;
+}
 
-.index-buttons div{
-    display: flex;
-    flex-direction: row;
+a:hover {
+  color: #a9c3b8;
+}
+
+/* Main carousel container */
+.carousel {
+  width: 80%;
+  max-width: 1200px;
+  position: relative;
+  margin: 2rem auto 4rem; 
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  color:#FFF8E1;
+}
+
+.carousel .container {
+  width: 100%;
+  padding: 40px 50px;
+}
+
+/* Carousel indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: -50px;
+}
+
+.carousel-indicators button.custom-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.carousel-indicators button.custom-indicator.active {
+  background-color: #DCA1A1;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 123, 179, 0.7);
+}
+
+.carousel-indicators button.custom-indicator:hover {
+  background-color: #ff7e7e;
+  transform: scale(1.3);
+}
+
+.carousel-control-prev, 
+.carousel-control-next {
+  position: absolute !important;
+  top: 50% !important; 
+  transform: translateY(-50%) !important;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100 !important; 
+}
+
+.carousel-control-prev {
+  left: -65px !important;
+}
+
+.carousel-control-next {
+  right: -65px !important;
+}
+
+/* Image display */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  margin: 0 auto 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Heading styles */
+h2 {
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+/* Call-to-action button */
+.btn-branding-outline {
+  border:none;
+  padding: 12px 20px;
+  background:  #FFE082;
+  color:black;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-branding-outline:hover {
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+  color: black;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+  .carousel {
+    width: 90%;
+  }
+  
+  .carousel-control-prev {
+    left: 10px;
+  }
+  
+  .carousel-control-next {
+    right: 10px;
+  }
+  
+  .carousel-item {
+    flex-direction: column;
     text-align: center;
-    }
-button {
-    border: none;
-    background-color: var(--main-theme-color);
-    padding: 10px 20px;
-    font-size: 16px;
-    color: var(--main-secondary-color);
-    cursor: pointer;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .carousel {
+    padding: 20px;
+  }
+  
+  .fakeimg {
+    height: 200px;
+    max-width: 100%;
+  }
+  
+  .carousel-control-prev, 
+  .carousel-control-next {
+    width: 30px;
+    height: 30px;
+  }
 }
