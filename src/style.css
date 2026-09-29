@@ -1,210 +1,160 @@
-body {
-  background:url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/161/478/original/Elegant_alcohol_ink_hand_painted_background_2401.jpg?1743054308);
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-attachment: fixed;
-  padding: 10px; 
-  align-content: center;
-  font-family: Arial, sans-serif;
-  margin: 0;
-}
+/* site.css
+   Loaded AFTER style.css on every page.
+   Everything theme-related lives in the variables below, so when we redo the
+   background and colour scheme we only have to change this block. */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Hero section */
-.Hero{
-  text-align: center;
-  font-weight: 600;
-  color: #FFF8E1;
-}
-
-/* Navigation buttons */
-.index-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.index-buttons button {
-  border:none;
-  background-color:#D4AF37;
-  padding: 10px 20px;
-  font-size: 16px;
-  color:  #000066;
-  cursor: pointer;
-  border-radius: 20px;
-  transition: 0.4s ease-in-out;
-}
-
-.index-buttons button:hover {
-  background-color: #DCA1A1;
-  color: black;
-}
-
-.index-buttons a {
-  text-decoration: none;
-  color: inherit; 
-}
-
-/* Link styles */
-a:visited {
-  color: #c7bcdb;
-}
-
-a:hover {
-  color: #a9c3b8;
-}
-
-/* Main carousel container */
-.carousel {
-  width: 80%;
-  max-width: 1200px;
-  position: relative;
-  margin: 2rem auto 4rem; 
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-  border-radius: 10px;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
-  color:#FFF8E1;
-}
-
-.carousel .container {
-  width: 100%;
-  padding: 40px 50px;
-}
-
-/* Carousel indicators */
-.carousel-indicators {
-  position: absolute;
-  bottom: -50px;
-}
-
-.carousel-indicators button.custom-indicator {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: 0 8px;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.carousel-indicators button.custom-indicator.active {
-  background-color: #DCA1A1;
-  transform: scale(1.2);
-  box-shadow: 0 0 10px rgba(255, 123, 179, 0.7);
-}
-
-.carousel-indicators button.custom-indicator:hover {
-  background-color: #ff7e7e;
-  transform: scale(1.3);
-}
-
-.carousel-control-prev, 
-.carousel-control-next {
-  position: absolute !important;
-  top: 50% !important; 
-  transform: translateY(-50%) !important;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100 !important; 
-}
-
-.carousel-control-prev {
-  left: -65px !important;
-}
-
-.carousel-control-next {
-  right: -65px !important;
-}
-
-/* Image display */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  max-width: 400px;
-  height: 300px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 18px;
-  margin: 0 auto 20px;
-  transition: transform 0.3s ease;
-}
-
-/* Heading styles */
-h2 {
-  margin-bottom: 20px;
-  text-decoration: underline;
-}
-
-/* Call-to-action button */
-.btn-branding-outline {
-  border:none;
-  padding: 12px 20px;
-  background:  #FFE082;
-  color:black;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  display: inline-block;
-  font-weight: bold;
-  border-radius: 25px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-branding-outline:hover {
-  background: linear-gradient(90deg, #ff758c, #ff7eb3);
-  color: black;
-  transform: scale(1.1);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive design */
-@media screen and (max-width: 1200px) {
-  .carousel {
-    width: 90%;
+   :root {
+    --ink: #1f2421;
+    --muted: #5c6661;
+    --rule: #d8d5cd;
+    --accent: #3f5e52;
+    --accent-hover: #2c4239;
+    --surface: transparent;
   }
   
-  .carousel-control-prev {
-    left: 10px;
+  /* ---------- Navigation ---------- */
+  /* Links styled as buttons instead of <a> nested inside <button>,
+     which was invalid markup and confusing for screen readers. */
+  
+  .index-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
   }
   
-  .carousel-control-next {
-    right: 10px;
+  .index-buttons a.nav-btn {
+    display: inline-block;
+    padding: 0.55rem 1.4rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 1.2;
+    background: var(--surface);
+    transition: background-color 0.15s ease, color 0.15s ease;
   }
   
-  .carousel-item {
-    flex-direction: column;
+  .index-buttons a.nav-btn:hover,
+  .index-buttons a.nav-btn:focus-visible {
+    background: var(--accent);
+    color: #fff;
+  }
+  
+  /* Marks the page you are currently on */
+  .index-buttons a.nav-btn[aria-current="page"] {
+    background: var(--accent);
+    color: #fff;
+  }
+  
+  /* Visible keyboard focus everywhere */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+  
+  /* ---------- Shared content ---------- */
+  
+  .page-section {
+    max-width: 48rem;
+    margin: 0 auto 3.5rem;
+    padding: 0 1.25rem;
+  }
+  
+  .page-section p {
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  
+  .lede {
+    font-size: 1.1rem;
+    color: var(--muted);
+  }
+  
+  /* ---------- Résumé ---------- */
+  
+  .resume-block {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.25rem;
+    margin-top: 1.75rem;
+  }
+  
+  .resume-block h3 {
+    margin-bottom: 0.15rem;
+  }
+  
+  .resume-meta {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .resume-block ul {
+    padding-left: 1.1rem;
+  }
+  
+  .resume-block li {
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+  }
+  
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 0.5rem 1.5rem;
+    padding-left: 1.1rem;
+  }
+  
+  /* ---------- Contact ---------- */
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.9rem;
+    justify-content: center;
+  }
+  
+  .contact-list a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .contact-list a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+  }
+  
+  /* ---------- Footer ---------- */
+  
+  .site-footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 3rem;
+    padding: 1.5rem 1rem 2.5rem;
     text-align: center;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .carousel {
-    padding: 20px;
+    color: var(--muted);
+    font-size: 0.9rem;
   }
   
-  .fakeimg {
-    height: 200px;
-    max-width: 100%;
+  /* ---------- Project images ---------- */
+  /* Replaces the inline fixed heights, which were squashing images
+     to 200px regardless of their real proportions. */
+  
+  .project-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
   }
   
-  .carousel-control-prev, 
-  .carousel-control-next {
-    width: 30px;
-    height: 30px;
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
   }
-}
