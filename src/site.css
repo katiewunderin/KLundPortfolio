@@ -1,0 +1,550 @@
+/* ============================================================
+   site.css — Katie Lunder
+   This REPLACES style.css, and Bootstrap is no longer needed.
+   Every colour lives in the two token blocks below, so a future
+   theme change only touches the top 70 lines.
+   ============================================================ */
+
+/* ---------- Tokens: dark (default) ---------- */
+
+:root {
+    --sky-top: #070A12;
+    --sky-mid: #0D1524;
+    --sky-low: #16203A;
+    --glow: rgba(200, 151, 60, 0.20);
+  
+    --page: #0C1018;
+    --ink: #E9E2D4;
+    --muted: #97A0AE;
+    --brass: #D0A04B;
+    --brass-hi: #E5BD72;
+    --rust: #A34A22;
+    --rule: #232B3A;
+    --surface: #121826;
+  
+    --range-far: #2B3647;
+    --range-mid: #1B2331;
+    --range-near: #10161F;
+    --snow: #5C6B80;
+    --star: #F2ECDC;
+    --star-op: 1;
+  
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Karla", "Helvetica Neue", Arial, sans-serif;
+  
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    color-scheme: dark;
+  }
+  
+  /* ---------- Tokens: light ---------- */
+  
+  :root[data-theme="light"] {
+    --sky-top: #BFD2E4;
+    --sky-mid: #E4D9CB;
+    --sky-low: #F2E3CE;
+    --glow: rgba(163, 74, 34, 0.14);
+  
+    --page: #FBF7EF;
+    --ink: #20261F;
+    --muted: #5E6659;
+    --brass: #8A5E1C;
+    --brass-hi: #6E4A12;
+    --rust: #9A4520;
+    --rule: #DCD5C6;
+    --surface: #F3EDE1;
+  
+    --range-far: #93A2B4;
+    --range-mid: #6B7A8B;
+    --range-near: #3E4A55;
+    --snow: #E8EEF4;
+    --star: #FFFFFF;
+    --star-op: 0;
+  
+    color-scheme: light;
+  }
+  
+  /* ---------- Base ---------- */
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  html {
+    scroll-padding-top: 4rem;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  a {
+    color: var(--brass);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  
+  a:hover {
+    color: var(--brass-hi);
+  }
+  
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+  
+  /* Keyboard users can jump past the hero straight to the content */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--page);
+    color: var(--ink);
+    padding: 0.6rem 1rem;
+    z-index: 100;
+  }
+  
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+  
+  .wrap {
+    width: min(100% - 2.5rem, 46rem);
+    margin-inline: auto;
+  }
+  
+  /* ---------- Hero ---------- */
+  
+  .hero {
+    position: relative;
+    background:
+      radial-gradient(90% 55% at 50% 100%, var(--glow) 0%, rgba(0, 0, 0, 0) 70%),
+      linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 58%, var(--sky-low) 100%);
+    padding-top: clamp(3.5rem, 11vw, 7rem);
+    overflow: hidden;
+  }
+  
+  .hero-inner {
+    position: relative;
+    z-index: 3;
+    padding-bottom: clamp(9rem, 26vw, 15rem);
+  }
+  
+  /* Shorter hero for the interior pages, so the content starts sooner */
+  .hero.hero-compact {
+    padding-top: clamp(2.5rem, 7vw, 4.5rem);
+  }
+  
+  .hero.hero-compact .hero-inner {
+    padding-bottom: clamp(6rem, 18vw, 10rem);
+  }
+  
+  .skyline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    display: block;
+  }
+  
+  .stars {
+    opacity: var(--star-op);
+    transition: opacity 0.3s ease;
+  }
+  
+  .stars circle {
+    fill: var(--star);
+  }
+  
+  .eyebrow {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+  }
+  
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2.7rem, 8.5vw, 4.5rem);
+    line-height: 1.03;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.1rem;
+  }
+  
+  /* Interior pages use a smaller h1 than the homepage */
+  .hero-compact h1 {
+    font-size: clamp(2.2rem, 6vw, 3.25rem);
+  }
+  
+  .hero-rule {
+    width: 4.5rem;
+    height: 2px;
+    background: var(--brass);
+    border: 0;
+    margin: 0 0 1.4rem;
+  }
+  
+  .positioning {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+    line-height: 1.45;
+    max-width: 34ch;
+    margin: 0 0 1.2rem;
+  }
+  
+  .hero-meta {
+    color: var(--muted);
+    font-size: 0.98rem;
+    margin: 0;
+    max-width: 40ch;
+  }
+  
+  /* ---------- Navigation ---------- */
+  
+  nav.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--page);
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  .nav-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(0.9rem, 3.5vw, 2rem);
+    padding: 0.8rem 0;
+  }
+  
+  .nav-row a {
+    font-weight: 500;
+    font-size: 0.98rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  
+  .nav-row a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--rule);
+  }
+  
+  .nav-row a[aria-current="page"] {
+    color: var(--ink);
+    border-bottom-color: var(--brass);
+  }
+  
+  /* ---------- Theme toggle ---------- */
+  
+  .theme-toggle {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    color: var(--muted);
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  
+  .theme-toggle:hover {
+    color: var(--ink);
+    border-color: var(--brass);
+  }
+  
+  .theme-toggle svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+  }
+  
+  .icon-moon {
+    display: none;
+  }
+  
+  :root[data-theme="light"] .icon-sun {
+    display: none;
+  }
+  
+  :root[data-theme="light"] .icon-moon {
+    display: inline;
+  }
+  
+  /* ---------- Sections and type ---------- */
+  
+  section {
+    padding: clamp(3rem, 8vw, 4.5rem) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  section:last-of-type {
+    border-bottom: 0;
+  }
+  
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 4vw, 2.05rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.2rem;
+  }
+  
+  h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0 0 0.15rem;
+  }
+  
+  p {
+    max-width: 64ch;
+  }
+  
+  .lede {
+    font-size: 1.14rem;
+    line-height: 1.65;
+  }
+  
+  /* Outlined button, e.g. Download CV */
+  .btn-brass {
+    display: inline-block;
+    border: 1px solid var(--brass);
+    border-radius: 999px;
+    padding: 0.5rem 1.3rem;
+    color: var(--brass);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  
+  .btn-brass:hover {
+    background: var(--brass);
+    color: var(--page);
+  }
+  
+  /* ---------- Projects ---------- */
+  
+  .project {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem 2rem;
+    padding: 1.9rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  
+  .project:first-of-type {
+    border-top: 0;
+    padding-top: 0.4rem;
+  }
+  
+  @media (min-width: 46rem) {
+    .project {
+      grid-template-columns: 16rem 1fr;
+      align-items: start;
+    }
+  }
+  
+  .project img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+  }
+  
+  /* Placeholder box, used only where a screenshot is missing */
+  .shot {
+    aspect-ratio: 4 / 3;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  
+  .stack {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0.5rem 0 0.8rem;
+  }
+  
+  .project p {
+    margin-top: 0;
+  }
+  
+  .inline-link {
+    font-weight: 700;
+  }
+  
+  /* ---------- Résumé ---------- */
+  
+  .role {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  
+  .role-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.3rem 1.5rem;
+  }
+  
+  .dates {
+    font-size: 0.92rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  
+  .employer {
+    color: var(--muted);
+    font-size: 0.97rem;
+    margin: 0 0 0.8rem;
+  }
+  
+  /* "Promoted from..." line under a job title */
+  .promoted {
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-style: italic;
+    margin: -0.6rem 0 0.8rem;
+  }
+  
+  .role ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    max-width: 64ch;
+  }
+  
+  .role li {
+    margin-bottom: 0.4rem;
+  }
+  
+  .role li::marker {
+    color: var(--brass);
+  }
+  
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 0.35rem 2rem;
+    padding-left: 1.1rem;
+    margin: 0;
+  }
+  
+  .skill-grid li::marker {
+    color: var(--brass);
+  }
+  
+  /* ---------- Contact ---------- */
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.7rem;
+  }
+  
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  
+  .contact-list svg {
+    width: 17px;
+    height: 17px;
+    fill: var(--muted);
+    flex: none;
+  }
+  
+  /* ---------- Footer ---------- */
+  
+  footer.site-footer {
+    border-top: 1px solid var(--rule);
+    padding: 2.5rem 0 3.5rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  
+  footer.site-footer p {
+    margin: 0;
+  }
+  
+  /* ---------- Motion ---------- */
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  
+    * {
+      transition-duration: 0.001ms !important;
+      animation-duration: 0.001ms !important;
+    }
+  }
+  
+  /* ---------- Print: plain black on white, so the résumé prints clean ---------- */
+  
+  @media print {
+  
+    .hero,
+    nav.site-nav,
+    .theme-toggle,
+    footer.site-footer,
+    .skip-link {
+      display: none !important;
+    }
+  
+    body {
+      background: #fff;
+      color: #000;
+      font-size: 11pt;
+    }
+  
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+  
+    .role,
+    .project {
+      break-inside: avoid;
+    }
+  }
