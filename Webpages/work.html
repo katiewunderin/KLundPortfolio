@@ -4,153 +4,419 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Projects built by Katie Lunder, including an AI hiking guide, a world clock and a weather forecast app." />
+  <meta name="description"
+    content="Projects built by Katie Lunder, including an AI hiking guide, a world clock and a weather forecast app." />
   <title>Work | Katie Lunder</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@500;700&display=swap"
-    rel="stylesheet" />
-  <link href="../src/style.css" rel="stylesheet" type="text/css" />
-  <link href="../src/site.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="../src/site.css" rel="stylesheet">
+
+  <script>
+    // Applies the saved theme before first paint, so the page never flashes
+    // the wrong colours. Must stay inline in the head, not in theme.js.
+    (function () {
+      try {
+        var saved = localStorage.getItem("kl-theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      } catch (e) { }
+    })();
+  </script>
 </head>
 
 <body>
-  <div class="Hero">
-    <p>Hello, I am</p>
-    <h1>Katie Lunder</h1>
-    <h3>Operations and project professional. MSc Project Management candidate, London South Bank University.</h3>
-  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav class="index-buttons" aria-label="Main">
-    <a class="nav-btn" href="../index.html">Home</a>
-    <a class="nav-btn" href="about.html">About</a>
-    <a class="nav-btn" href="resume.html">Résumé</a>
-    <a class="nav-btn" href="work.html" aria-current="page">Work</a>
-    <a class="nav-btn" href="contact.html">Contact</a>
+  <header class="hero hero-compact">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Katie Lunder</p>
+      <h1>Work</h1>
+      <hr class="hero-rule" />
+      <p class="hero-meta">Applications I have built, mostly to solve problems I actually had. Each one is live, so click through and try it.</p>
+    </div>
+
+    <svg class="skyline" viewBox="0 0 1440 460" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="mw" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#C9D4E8" stop-opacity="0.30" />
+          <stop offset="55%" stop-color="#8E7FA8" stop-opacity="0.13" />
+          <stop offset="100%" stop-color="#8E7FA8" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+
+      <!-- Milky Way band -->
+      <g class="stars">
+        <ellipse cx="660" cy="150" rx="430" ry="105" fill="url(#mw)" transform="rotate(-24 660 150)" />
+      </g>
+
+      <!-- Star field -->
+      <g class="stars">
+        <circle cx="651.4" cy="167.9" r="1.4" opacity="0.58"/>
+        <circle cx="731.3" cy="176.2" r="0.7" opacity="0.81"/>
+        <circle cx="685.1" cy="184.2" r="0.7" opacity="0.32"/>
+        <circle cx="436.9" cy="27.2" r="1.4" opacity="0.87"/>
+        <circle cx="913.6" cy="178.6" r="0.9" opacity="0.93"/>
+        <circle cx="941.6" cy="184.7" r="0.7" opacity="0.69"/>
+        <circle cx="1197.7" cy="18.9" r="0.6" opacity="0.38"/>
+        <circle cx="348.4" cy="9.0" r="0.9" opacity="0.48"/>
+        <circle cx="851.0" cy="58.6" r="0.7" opacity="0.7"/>
+        <circle cx="719.7" cy="198.7" r="0.9" opacity="0.71"/>
+        <circle cx="585.8" cy="165.4" r="1.4" opacity="0.31"/>
+        <circle cx="365.8" cy="227.4" r="1.0" opacity="0.45"/>
+        <circle cx="101.1" cy="229.9" r="0.9" opacity="0.33"/>
+        <circle cx="418.9" cy="20.0" r="0.6" opacity="0.84"/>
+        <circle cx="0.8" cy="62.9" r="0.6" opacity="0.58"/>
+        <circle cx="1411.7" cy="119.2" r="0.6" opacity="0.65"/>
+        <circle cx="285.8" cy="202.5" r="0.8" opacity="0.31"/>
+        <circle cx="478.9" cy="289.2" r="1.4" opacity="0.9"/>
+        <circle cx="193.8" cy="212.1" r="0.6" opacity="0.29"/>
+        <circle cx="1147.7" cy="53.3" r="1.0" opacity="0.38"/>
+        <circle cx="732.8" cy="295.6" r="1.4" opacity="0.34"/>
+        <circle cx="926.9" cy="35.0" r="0.9" opacity="0.94"/>
+        <circle cx="0.7" cy="259.3" r="1.4" opacity="0.66"/>
+        <circle cx="1437.0" cy="5.9" r="0.7" opacity="0.53"/>
+        <circle cx="1230.3" cy="192.6" r="0.6" opacity="0.28"/>
+        <circle cx="210.8" cy="132.5" r="0.6" opacity="0.79"/>
+        <circle cx="473.7" cy="88.9" r="0.6" opacity="0.3"/>
+        <circle cx="300.6" cy="191.0" r="0.6" opacity="0.67"/>
+        <circle cx="535.3" cy="136.0" r="1.0" opacity="0.59"/>
+        <circle cx="827.4" cy="260.0" r="0.7" opacity="0.69"/>
+        <circle cx="447.6" cy="68.5" r="1.0" opacity="0.42"/>
+        <circle cx="273.3" cy="221.8" r="1.0" opacity="0.39"/>
+        <circle cx="1368.2" cy="264.7" r="1.0" opacity="0.3"/>
+        <circle cx="68.3" cy="32.7" r="1.0" opacity="0.92"/>
+        <circle cx="343.3" cy="211.4" r="0.8" opacity="0.54"/>
+        <circle cx="1302.9" cy="147.3" r="1.0" opacity="0.37"/>
+        <circle cx="1037.3" cy="20.6" r="0.7" opacity="0.59"/>
+        <circle cx="941.1" cy="184.8" r="0.6" opacity="0.45"/>
+        <circle cx="1321.0" cy="61.2" r="0.6" opacity="0.3"/>
+        <circle cx="592.5" cy="74.7" r="0.6" opacity="0.37"/>
+        <circle cx="531.1" cy="171.7" r="0.7" opacity="0.31"/>
+        <circle cx="199.3" cy="135.1" r="0.8" opacity="0.71"/>
+        <circle cx="995.4" cy="175.3" r="0.7" opacity="0.66"/>
+        <circle cx="1330.0" cy="142.4" r="0.8" opacity="0.74"/>
+        <circle cx="1386.4" cy="6.4" r="1.2" opacity="0.3"/>
+        <circle cx="96.9" cy="93.3" r="0.7" opacity="0.95"/>
+        <circle cx="108.4" cy="163.8" r="1.2" opacity="0.28"/>
+        <circle cx="1348.2" cy="221.1" r="0.7" opacity="0.81"/>
+        <circle cx="1317.6" cy="105.6" r="1.2" opacity="0.58"/>
+        <circle cx="111.8" cy="257.2" r="1.4" opacity="0.27"/>
+        <circle cx="719.9" cy="4.4" r="1.2" opacity="0.52"/>
+        <circle cx="839.1" cy="182.7" r="0.6" opacity="0.31"/>
+        <circle cx="166.4" cy="77.2" r="0.9" opacity="0.76"/>
+        <circle cx="559.3" cy="220.5" r="1.0" opacity="0.57"/>
+        <circle cx="666.2" cy="162.4" r="1.0" opacity="0.78"/>
+        <circle cx="42.9" cy="180.4" r="0.9" opacity="0.27"/>
+        <circle cx="1378.6" cy="33.9" r="1.4" opacity="0.68"/>
+        <circle cx="1325.5" cy="76.7" r="0.6" opacity="0.51"/>
+        <circle cx="206.2" cy="183.5" r="1.0" opacity="0.37"/>
+        <circle cx="1304.2" cy="198.0" r="0.9" opacity="0.6"/>
+        <circle cx="347.7" cy="121.4" r="0.8" opacity="0.39"/>
+        <circle cx="620.5" cy="241.8" r="0.7" opacity="0.87"/>
+        <circle cx="553.6" cy="174.9" r="0.8" opacity="0.4"/>
+        <circle cx="193.8" cy="105.2" r="1.4" opacity="0.28"/>
+        <circle cx="92.4" cy="294.1" r="1.4" opacity="0.37"/>
+        <circle cx="648.9" cy="82.5" r="0.7" opacity="0.83"/>
+        <circle cx="550.9" cy="156.0" r="1.2" opacity="0.47"/>
+        <circle cx="1208.3" cy="294.6" r="0.9" opacity="0.47"/>
+        <circle cx="1193.4" cy="83.4" r="1.0" opacity="0.28"/>
+        <circle cx="1020.4" cy="171.2" r="0.8" opacity="0.7"/>
+        <circle cx="812.2" cy="192.3" r="0.9" opacity="0.57"/>
+        <circle cx="35.6" cy="248.9" r="0.7" opacity="0.8"/>
+        <circle cx="1147.5" cy="295.2" r="0.6" opacity="0.56"/>
+        <circle cx="907.1" cy="196.5" r="1.4" opacity="0.51"/>
+        <circle cx="112.3" cy="59.4" r="1.4" opacity="0.58"/>
+        <circle cx="257.3" cy="3.2" r="0.9" opacity="0.62"/>
+        <circle cx="52.1" cy="67.9" r="1.4" opacity="0.49"/>
+        <circle cx="1004.1" cy="156.1" r="1.0" opacity="0.95"/>
+        <circle cx="229.2" cy="254.6" r="1.2" opacity="0.88"/>
+        <circle cx="125.6" cy="279.8" r="1.2" opacity="0.52"/>
+        <circle cx="648.7" cy="59.1" r="0.6" opacity="0.51"/>
+        <circle cx="819.1" cy="263.8" r="1.4" opacity="0.82"/>
+        <circle cx="494.1" cy="97.9" r="0.7" opacity="0.32"/>
+        <circle cx="1247.3" cy="239.5" r="1.2" opacity="0.34"/>
+        <circle cx="348.9" cy="117.1" r="0.6" opacity="0.93"/>
+        <circle cx="773.2" cy="237.2" r="0.8" opacity="0.43"/>
+        <circle cx="1034.3" cy="4.7" r="1.0" opacity="0.31"/>
+        <circle cx="634.9" cy="165.1" r="1.4" opacity="0.44"/>
+        <circle cx="1324.5" cy="65.5" r="1.4" opacity="0.29"/>
+        <circle cx="1151.8" cy="51.9" r="0.8" opacity="0.73"/>
+        <circle cx="1319.1" cy="141.2" r="1.0" opacity="0.88"/>
+        <circle cx="746.2" cy="203.4" r="0.9" opacity="0.91"/>
+        <circle cx="709.3" cy="284.7" r="0.6" opacity="0.78"/>
+        <circle cx="632.8" cy="167.6" r="1.4" opacity="0.76"/>
+        <circle cx="920.0" cy="156.8" r="1.4" opacity="0.89"/>
+        <circle cx="369.4" cy="201.4" r="1.4" opacity="0.86"/>
+        <circle cx="877.6" cy="91.3" r="0.7" opacity="0.93"/>
+        <circle cx="754.9" cy="171.9" r="0.7" opacity="0.54"/>
+        <circle cx="164.6" cy="1.5" r="0.9" opacity="0.27"/>
+        <circle cx="1395.9" cy="154.8" r="0.9" opacity="0.63"/>
+        <circle cx="1424.7" cy="36.6" r="0.6" opacity="0.73"/>
+        <circle cx="94.9" cy="161.6" r="0.9" opacity="0.89"/>
+        <circle cx="1152.6" cy="121.2" r="0.7" opacity="0.58"/>
+        <circle cx="182.8" cy="130.1" r="1.4" opacity="0.9"/>
+        <circle cx="1324.8" cy="157.5" r="0.6" opacity="0.38"/>
+        <circle cx="889.8" cy="277.6" r="0.7" opacity="0.74"/>
+        <circle cx="1407.3" cy="10.7" r="0.7" opacity="0.41"/>
+        <circle cx="989.3" cy="96.6" r="0.8" opacity="0.42"/>
+        <circle cx="718.3" cy="149.9" r="1.0" opacity="0.34"/>
+        <circle cx="735.1" cy="75.2" r="0.7" opacity="0.74"/>
+        <circle cx="1265.4" cy="7.0" r="1.2" opacity="0.54"/>
+        <circle cx="762.3" cy="47.9" r="0.7" opacity="0.85"/>
+        <circle cx="769.0" cy="65.5" r="0.7" opacity="0.85"/>
+        <circle cx="880.9" cy="257.0" r="0.7" opacity="0.89"/>
+        <circle cx="904.2" cy="104.3" r="0.7" opacity="0.47"/>
+        <circle cx="453.6" cy="276.8" r="0.7" opacity="0.79"/>
+        <circle cx="280.1" cy="29.1" r="0.7" opacity="0.34"/>
+        <circle cx="126.9" cy="116.4" r="0.9" opacity="0.83"/>
+        <circle cx="607.1" cy="237.0" r="0.7" opacity="0.39"/>
+        <circle cx="904.3" cy="239.7" r="0.6" opacity="0.39"/>
+        <circle cx="982.6" cy="273.4" r="0.8" opacity="0.33"/>
+        <circle cx="728.2" cy="227.4" r="1.0" opacity="0.95"/>
+        <circle cx="1199.4" cy="240.9" r="0.9" opacity="0.32"/>
+        <circle cx="53.9" cy="165.5" r="1.0" opacity="0.88"/>
+        <circle cx="693.0" cy="56.9" r="0.6" opacity="0.39"/>
+        <circle cx="1209.9" cy="297.1" r="1.2" opacity="0.32"/>
+        <circle cx="89.2" cy="285.4" r="0.9" opacity="0.3"/>
+        <circle cx="139.3" cy="117.3" r="0.9" opacity="0.61"/>
+        <circle cx="619.3" cy="180.3" r="0.6" opacity="0.69"/>
+        <circle cx="58.9" cy="60.1" r="0.9" opacity="0.57"/>
+        <circle cx="1064.6" cy="121.6" r="0.7" opacity="0.67"/>
+        <circle cx="136.5" cy="237.7" r="0.8" opacity="0.88"/>
+        <circle cx="1154.5" cy="211.4" r="1.4" opacity="0.89"/>
+        <circle cx="1353.0" cy="170.9" r="0.7" opacity="0.6"/>
+        <circle cx="1415.1" cy="241.4" r="0.8" opacity="0.45"/>
+        <circle cx="167.4" cy="222.9" r="0.7" opacity="0.82"/>
+        <circle cx="584.1" cy="269.0" r="1.0" opacity="0.74"/>
+        <circle cx="1104.9" cy="229.6" r="0.9" opacity="0.39"/>
+        <circle cx="266.1" cy="239.2" r="0.8" opacity="0.58"/>
+        <circle cx="15.3" cy="106.7" r="1.2" opacity="0.88"/>
+        <circle cx="71.4" cy="81.9" r="1.2" opacity="0.46"/>
+        <circle cx="311.1" cy="121.8" r="0.7" opacity="0.62"/>
+        <circle cx="561.0" cy="300.0" r="1.2" opacity="0.4"/>
+        <circle cx="172.2" cy="118.6" r="1.0" opacity="0.27"/>
+        <circle cx="886.2" cy="221.6" r="0.8" opacity="0.56"/>
+        <circle cx="726.9" cy="228.4" r="1.2" opacity="0.51"/>
+        <circle cx="141.8" cy="75.3" r="0.8" opacity="0.64"/>
+        <circle cx="731.3" cy="290.1" r="1.0" opacity="0.84"/>
+        <circle cx="143.5" cy="133.3" r="1.2" opacity="0.3"/>
+        <circle cx="860.5" cy="227.8" r="0.6" opacity="0.52"/>
+        <circle cx="954.9" cy="111.5" r="0.8" opacity="0.68"/>
+        <circle cx="689.4" cy="149.9" r="0.7" opacity="0.67"/>
+        <circle cx="713.5" cy="153.9" r="0.7" opacity="0.69"/>
+        <circle cx="447.3" cy="178.0" r="0.5" opacity="0.84"/>
+        <circle cx="696.3" cy="104.7" r="0.8" opacity="0.34"/>
+        <circle cx="436.1" cy="231.3" r="0.7" opacity="0.35"/>
+        <circle cx="968.7" cy="72.2" r="0.6" opacity="0.33"/>
+        <circle cx="325.0" cy="178.0" r="0.6" opacity="0.99"/>
+        <circle cx="917.3" cy="64.4" r="1.0" opacity="0.59"/>
+        <circle cx="333.3" cy="223.2" r="0.6" opacity="0.39"/>
+        <circle cx="574.1" cy="132.8" r="0.7" opacity="0.75"/>
+        <circle cx="765.0" cy="156.8" r="0.6" opacity="0.97"/>
+        <circle cx="862.5" cy="115.1" r="0.7" opacity="0.85"/>
+        <circle cx="739.8" cy="147.2" r="1.0" opacity="0.79"/>
+        <circle cx="365.1" cy="260.2" r="0.6" opacity="0.65"/>
+        <circle cx="810.4" cy="171.1" r="0.5" opacity="0.31"/>
+        <circle cx="445.9" cy="216.9" r="0.6" opacity="0.68"/>
+        <circle cx="323.1" cy="291.4" r="1.0" opacity="0.46"/>
+        <circle cx="1041.5" cy="38.2" r="0.7" opacity="0.54"/>
+        <circle cx="879.7" cy="81.1" r="0.5" opacity="0.61"/>
+        <circle cx="980.3" cy="19.1" r="0.8" opacity="0.6"/>
+        <circle cx="448.1" cy="181.6" r="1.0" opacity="0.53"/>
+        <circle cx="691.3" cy="57.3" r="0.8" opacity="0.76"/>
+        <circle cx="683.8" cy="142.8" r="1.0" opacity="0.36"/>
+        <circle cx="639.7" cy="144.4" r="0.7" opacity="0.88"/>
+        <circle cx="725.6" cy="87.3" r="0.7" opacity="0.5"/>
+        <circle cx="283.2" cy="291.9" r="0.7" opacity="0.93"/>
+        <circle cx="433.8" cy="217.9" r="0.7" opacity="0.61"/>
+        <circle cx="909.5" cy="110.5" r="0.8" opacity="0.98"/>
+        <circle cx="838.0" cy="95.9" r="0.7" opacity="0.32"/>
+        <circle cx="740.2" cy="76.3" r="1.0" opacity="0.56"/>
+        <circle cx="585.1" cy="224.4" r="0.6" opacity="0.42"/>
+        <circle cx="909.9" cy="69.2" r="0.5" opacity="0.45"/>
+        <circle cx="272.4" cy="292.3" r="0.5" opacity="0.76"/>
+        <circle cx="976.0" cy="97.6" r="1.0" opacity="0.36"/>
+        <circle cx="265.7" cy="178.5" r="0.5" opacity="0.32"/>
+        <circle cx="856.0" cy="156.8" r="0.8" opacity="0.47"/>
+        <circle cx="403.7" cy="179.0" r="0.8" opacity="0.58"/>
+        <circle cx="569.9" cy="184.3" r="0.8" opacity="0.64"/>
+        <circle cx="980.4" cy="102.0" r="0.5" opacity="0.59"/>
+        <circle cx="899.5" cy="8.9" r="0.8" opacity="0.88"/>
+        <circle cx="1061.9" cy="43.6" r="1.0" opacity="0.55"/>
+        <circle cx="1024.7" cy="73.7" r="0.8" opacity="0.78"/>
+        <circle cx="446.4" cy="229.7" r="0.7" opacity="0.98"/>
+        <circle cx="245.3" cy="282.7" r="0.6" opacity="0.84"/>
+        <circle cx="407.6" cy="251.2" r="1.0" opacity="0.64"/>
+        <circle cx="908.9" cy="103.2" r="0.7" opacity="0.45"/>
+        <circle cx="399.5" cy="171.1" r="0.6" opacity="0.61"/>
+        <circle cx="924.2" cy="104.4" r="0.7" opacity="0.74"/>
+        <circle cx="964.0" cy="21.3" r="0.8" opacity="0.92"/>
+        <circle cx="991.8" cy="91.5" r="0.5" opacity="0.64"/>
+        <circle cx="502.9" cy="253.1" r="0.8" opacity="0.98"/>
+        <circle cx="927.2" cy="15.2" r="0.5" opacity="0.76"/>
+        <circle cx="464.6" cy="223.5" r="0.7" opacity="0.62"/>
+        <circle cx="341.1" cy="255.1" r="0.8" opacity="0.41"/>
+        <circle cx="484.3" cy="276.1" r="1.0" opacity="0.39"/>
+        <circle cx="827.9" cy="63.4" r="0.5" opacity="0.41"/>
+        <circle cx="976.9" cy="88.0" r="0.6" opacity="0.88"/>
+        <circle cx="237.2" cy="261.0" r="1.0" opacity="0.68"/>
+        <circle cx="684.2" cy="156.4" r="0.6" opacity="0.94"/>
+        <circle cx="296.0" cy="234.2" r="1.0" opacity="0.59"/>
+        <circle cx="754.3" cy="124.2" r="0.7" opacity="0.52"/>
+        <circle cx="251.1" cy="301.1" r="0.5" opacity="0.55"/>
+        <circle cx="853.9" cy="131.7" r="0.8" opacity="0.82"/>
+        <circle cx="941.2" cy="112.5" r="0.8" opacity="0.8"/>
+        <circle cx="621.8" cy="179.1" r="0.5" opacity="0.9"/>
+        <circle cx="263.3" cy="177.6" r="0.7" opacity="0.97"/>
+        <circle cx="861.4" cy="85.7" r="0.6" opacity="0.44"/>
+        <circle cx="806.4" cy="177.5" r="1.0" opacity="0.63"/>
+        <circle cx="734.6" cy="132.1" r="0.5" opacity="0.4"/>
+        <circle cx="254.0" cy="202.8" r="0.6" opacity="0.44"/>
+        <circle cx="164.5" cy="284.5" r="0.5" opacity="0.46"/>
+        <circle cx="374.1" cy="268.0" r="0.5" opacity="0.54"/>
+        <circle cx="963.0" cy="65.0" r="0.6" opacity="0.84"/>
+        <circle cx="908.6" cy="97.1" r="0.8" opacity="0.74"/>
+        <circle cx="824.4" cy="76.6" r="0.6" opacity="0.76"/>
+        <circle cx="787.8" cy="131.8" r="0.7" opacity="0.51"/>
+        <circle cx="568.6" cy="160.6" r="0.7" opacity="0.85"/>
+        <circle cx="922.5" cy="59.3" r="1.0" opacity="0.93"/>
+        <circle cx="661.6" cy="178.7" r="0.6" opacity="0.7"/>
+        <circle cx="525.7" cy="175.2" r="0.6" opacity="0.7"/>
+        <circle cx="182.1" cy="217.9" r="0.6" opacity="0.47"/>
+        <circle cx="705.7" cy="103.8" r="0.7" opacity="0.49"/>
+        <circle cx="925.1" cy="77.4" r="0.6" opacity="0.93"/>
+        <circle cx="635.5" cy="126.0" r="0.7" opacity="0.42"/>
+        <circle cx="903.6" cy="72.9" r="0.6" opacity="0.39"/>
+      </g>
+
+      <!-- Far range: high snow-capped peaks -->
+      <path fill="var(--range-far)"
+        d="M0,330 L48,300 L86,318 L132,262 L168,292 L214,238 L258,286 L300,252 L342,300 L388,214 L432,268 L476,240 L520,296 L562,250 L608,196 L654,262 L700,228 L742,284 L786,242 L828,300 L872,236 L916,286 L960,254 L1004,304 L1048,244 L1092,290 L1136,258 L1182,306 L1226,250 L1268,292 L1312,262 L1356,308 L1400,272 L1440,300 L1440,460 L0,460 Z" />
+
+      <!-- Snow on the highest peaks -->
+      <path fill="var(--snow)" opacity="0.9"
+        d="M608,196 L588,226 L600,222 L612,236 L624,224 L636,232 L628,214 Z M388,214 L370,244 L382,240 L392,252 L404,238 L414,246 L406,230 Z M214,238 L198,266 L210,262 L220,274 L232,260 L242,268 L234,254 Z M1182,306 L1168,330 L1178,326 L1188,336 L1198,324 L1208,332 L1200,320 Z" />
+
+      <!-- Mid range -->
+      <path fill="var(--range-mid)"
+        d="M0,374 L70,344 L124,368 L186,320 L238,352 L296,330 L358,364 L420,318 L486,348 L548,332 L612,372 L684,322 L748,356 L812,336 L884,376 L950,330 L1016,362 L1088,326 L1154,358 L1226,336 L1296,372 L1368,340 L1440,366 L1440,460 L0,460 Z" />
+
+      <!-- Near ridge with treeline -->
+      <path fill="var(--range-near)"
+        d="M0,418 L34,406 L52,418 L78,398 L100,414 L124,400 L150,420 L172,398 L198,416 L222,404 L248,422 L274,400 L300,418 L328,404 L354,424 L380,402 L406,418 L434,406 L460,424 L486,400 L512,416 L540,404 L566,422 L592,398 L618,414 L646,402 L672,420 L700,404 L726,422 L754,400 L780,416 L808,406 L834,424 L862,402 L888,418 L916,406 L942,422 L970,400 L996,416 L1024,404 L1050,422 L1078,402 L1104,418 L1132,406 L1158,424 L1186,400 L1212,416 L1240,406 L1266,422 L1294,402 L1320,418 L1348,406 L1374,424 L1402,404 L1428,418 L1440,412 L1440,460 L0,460 Z" />
+    </svg>
+  </header>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap nav-row">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Résumé</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="contact.html">Contact</a>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1.5a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1.5a1 1 0 0 1-2 0V19a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1.5a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13.5 0a1 1 0 0 1 1-1H20a1 1 0 0 1 0 2h-1.5a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l1 1a1 1 0 1 1-1.4 1.4l-1-1a1 1 0 0 1 0-1.4zm9 9a1 1 0 0 1 1.4 0l1 1a1 1 0 0 1-1.4 1.4l-1-1a1 1 0 0 1 0-1.4zm2.4-9a1 1 0 0 1 0 1.4l-1 1a1 1 0 1 1-1.4-1.4l1-1a1 1 0 0 1 1.4 0zm-9 9a1 1 0 0 1 0 1.4l-1 1a1 1 0 0 1-1.4-1.4l1-1a1 1 0 0 1 1.4 0z" />
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" />
+        </svg>
+        <span id="themeLabel">Light mode</span>
+      </button>
+    </div>
   </nav>
 
-  <section class="page-section text-center">
-    <h2>Work</h2>
-    <p class="lede">
-      Applications I have built, mostly to solve problems I actually had. Each one is live, so click through
-      and try it.
-    </p>
-  </section>
+  <main id="main">
+    <section>
+      <div class="wrap">
+        <article class="project">
+          <img src="../src/images/Hiker.image.cropped.png"
+            alt="Screenshot of the AI Hiking Guide showing generated trail information for a location" />
+          <div>
+            <h3>AI Hiking Guide</h3>
+            <p class="stack">JavaScript · AI API integration · Netlify</p>
+            <p>
+              Enter a location and the app calls an external AI API to generate a hiking guide for that area. Built
+                          for planning trails around Gunnison, Colorado, where I have spent a lot of time. Handles the API
+                          request, the wait state and the rendered response.
+            </p>
+            <a class="inline-link" href="https://ai-gunnisonpoem.netlify.app/">View the app</a>
+          </div>
+        </article>
 
-  <!-- AI Hiking Guide -->
-  <div class="container mb-5">
-    <div class="row align-items-center">
-      <div class="col-md-5">
-        <img src="../src/images/Hiker.image.cropped.png"
-          alt="Screenshot of the AI Hiking Guide showing generated trail information for a location"
-          class="project-img img-fluid rounded shadow border mx-auto" />
-      </div>
-      <div class="col-md-7">
-        <h2>AI Hiking Guide</h2>
-        <p>
-          Enter a location and the app calls an external AI API to generate a hiking guide for that area. Built
-          for planning trails around Gunnison, Colorado, where I have spent a lot of time. Handles the API
-          request, the wait state and the rendered response.
-        </p>
-        <p class="resume-meta">JavaScript · AI API integration · Netlify</p>
-        <a href="https://ai-gunnisonpoem.netlify.app/" class="btn btn-branding-outline">View the app</a>
-      </div>
-    </div>
-  </div>
+        <article class="project">
+          <img src="../src/images/worldclockss.png"
+            alt="Screenshot of the World Clock app showing live times in several cities" />
+          <div>
+            <h3>World Clock</h3>
+            <p class="stack">JavaScript · DOM manipulation · Netlify</p>
+            <p>
+              A live multi-timezone clock. Select a city and the time updates in real time. The city list is my own
+                          geography: Dublin, Oslo, Lisbon, Denver, Tokyo, London. Timezone handling, DOM updates and a reset
+                          function, all without a page refresh.
+            </p>
+            <a class="inline-link" href="https://fluorite-world-clocks.netlify.app/">View the app</a>
+          </div>
+        </article>
 
-  <!-- World Clock -->
-  <div class="container mb-5">
-    <div class="row align-items-center flex-row-reverse">
-      <div class="col-md-5">
-        <img src="../src/images/worldclockss.png"
-          alt="Screenshot of the World Clock app showing live times in several cities"
-          class="project-img img-fluid rounded shadow border mx-auto" />
-      </div>
-      <div class="col-md-7">
-        <h2>World Clock</h2>
-        <p>
-          A live multi-timezone clock. Select a city and the time updates in real time. The city list is my own
-          geography: Dublin, Oslo, Lisbon, Denver, Tokyo, London. Timezone handling, DOM updates and a reset
-          function, all without a page refresh.
-        </p>
-        <p class="resume-meta">JavaScript · DOM manipulation · Netlify</p>
-        <a href="https://fluorite-world-clocks.netlify.app/" class="btn btn-branding-outline">View the app</a>
-      </div>
-    </div>
-  </div>
+        <article class="project">
+          <img src="../src/images/Weather-App-Screenshot.jpeg"
+            alt="Screenshot of the weather app showing current conditions and a five day forecast" />
+          <div>
+            <h3>Weather Forecast</h3>
+            <p class="stack">JavaScript · REST API · Responsive design</p>
+            <p>
+              Search any city and get current conditions plus a five day forecast, pulled live from a weather API.
+                          Parses the API response and lays it out responsively so it works properly on a phone.
+            </p>
+            <a class="inline-link" href="https://lemon-sage.netlify.app/">View the app</a>
+          </div>
+        </article>
 
-  <!-- Weather Forecast -->
-  <div class="container mb-5">
-    <div class="row align-items-center">
-      <div class="col-md-5">
-        <img src="../src/images/Weather-App-Screenshot.jpeg"
-          alt="Screenshot of the weather app showing current conditions and a five day forecast"
-          class="project-img img-fluid rounded shadow border mx-auto" />
-      </div>
-      <div class="col-md-7">
-        <h2>Weather Forecast</h2>
-        <p>
-          Search any city and get current conditions plus a five day forecast, pulled live from a weather API.
-          Parses the API response and lays it out responsively so it works properly on a phone.
-        </p>
-        <p class="resume-meta">JavaScript · REST API · Responsive design</p>
-        <a href="https://lemon-sage.netlify.app/" class="btn btn-branding-outline">View the app</a>
-      </div>
-    </div>
-  </div>
+        <article class="project">
+          <img src="../src/images/nationalparkss.png"
+            alt="Screenshot of the National Park page layout" />
+          <div>
+            <h3>National Park page</h3>
+            <p class="stack">HTML · CSS · Responsive layout</p>
+            <p>
+              <!-- TODO Katie: one or two sentences. What was the brief, what did you build,
+                               what did you learn? Two lines is plenty. -->
+                          An early build from my SheCodes coursework, focused on layout, semantic HTML and responsive styling.
+            </p>
+            <a class="inline-link" href="https://www.shecodes.io/cohorts/1677/projects/2116355">View the project</a>
+          </div>
+        </article>
 
-  <!-- National Park -->
-  <div class="container mb-5">
-    <div class="row align-items-center flex-row-reverse">
-      <div class="col-md-5">
-        <img src="../src/images/nationalparkss.png"
-          alt="Screenshot of the National Park page layout"
-          class="project-img img-fluid rounded shadow border mx-auto" />
+        <article class="project">
+          <img src="../src/images/GardenSC.png"
+            alt="Screenshot of the gardening project page" />
+          <div>
+            <h3>Gardening page</h3>
+            <p class="stack">HTML · CSS · JavaScript</p>
+            <p>
+              <!-- TODO Katie: same here, one or two sentences in your own words. -->
+                          A second SheCodes build, extending the same fundamentals with more interactive elements.
+            </p>
+            <a class="inline-link" href="https://www.shecodes.io/cohorts/1730/projects/2142530">View the project</a>
+          </div>
+        </article>
       </div>
-      <div class="col-md-7">
-        <h2>National Park page</h2>
-        <p>
-          <!-- TODO Katie: one or two sentences. What was the brief, what did you build,
-               what did you learn? Two lines is plenty. -->
-          An early build from my SheCodes coursework, focused on layout, semantic HTML and responsive styling.
-        </p>
-        <p class="resume-meta">HTML · CSS · Responsive layout</p>
-        <a href="https://www.shecodes.io/cohorts/1677/projects/2116355" class="btn btn-branding-outline">View the
-          project</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Gardening -->
-  <div class="container mb-5">
-    <div class="row align-items-center">
-      <div class="col-md-5">
-        <img src="../src/images/GardenSC.png"
-          alt="Screenshot of the gardening project page"
-          class="project-img img-fluid rounded shadow border mx-auto" />
-      </div>
-      <div class="col-md-7">
-        <h2>Gardening page</h2>
-        <p>
-          <!-- TODO Katie: same here, one or two sentences in your own words. -->
-          A second SheCodes build, extending the same fundamentals with more interactive elements.
-        </p>
-        <p class="resume-meta">HTML · CSS · JavaScript</p>
-        <a href="https://www.shecodes.io/cohorts/1730/projects/2142530" class="btn btn-branding-outline">View the
-          project</a>
-      </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
-    <p>Katie Lunder, London. <a href="contact.html">Get in touch</a>.</p>
+    <div class="wrap">
+      <p>Katie Lunder, London. <a href="contact.html">Get in touch</a>.</p>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/ddc3ee268a.js" crossorigin="anonymous"></script>
+  <script src="../src/theme.js"></script>
 </body>
 
 </html>
