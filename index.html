@@ -349,46 +349,70 @@
     <section>
       <div class="wrap">
         <h2>Selected projects</h2>
-        <p>A few things I have built. The full list is on the <a href="Webpages/work.html">Work</a> page.</p>
-        <article class="project">
+        <p>A few things I have built. Hover or tap a card to open it. The full list is on the <a href="Webpages/work.html">Work</a> page.</p>
+      </div>
+
+      <div class="showcase">
+        <article class="showcase-card is-open">
+          <button class="card-toggle" type="button" aria-expanded="true" aria-controls="card-clock">
+            <svg viewBox="0 0 32 24" aria-hidden="true">
+              <path d="M10 1 4 11h3L2 19h7v4h2v-4h7l-5-8h3zM23 7l-4 7h2l-4 6h5v3h2v-3h5l-4-6h2z" />
+            </svg>
+            World Clock
+          </button>
           <img src="src/images/worldclockss.png"
             alt="Screenshot of the World Clock app showing live times in several cities" />
-          <div>
-            <h3>World Clock</h3>
+          <div class="card-details" id="card-clock">
             <p class="stack">JavaScript · DOM manipulation · Netlify</p>
             <p>
               A live multi-timezone clock built in JavaScript. Pick a city and the time updates in real time,
-                          handling timezone offsets and DOM updates without a page refresh.
+              handling timezone offsets and DOM updates without a page refresh.
             </p>
-            <a class="inline-link" href="https://fluorite-world-clocks.netlify.app/">View the app</a>
+            <a class="inline-link" href="https://fluorite-world-clocks.netlify.app/" target="_blank"
+              rel="noopener">View the app <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new
+                tab)</span></a>
           </div>
         </article>
 
-        <article class="project">
+        <article class="showcase-card">
+          <button class="card-toggle" type="button" aria-expanded="false" aria-controls="card-hiking">
+            <svg viewBox="0 0 32 24" aria-hidden="true">
+              <path d="M10 1 4 11h3L2 19h7v4h2v-4h7l-5-8h3zM23 7l-4 7h2l-4 6h5v3h2v-3h5l-4-6h2z" />
+            </svg>
+            AI Hiking Guide
+          </button>
           <img src="src/images/Hiker.image.cropped.png"
             alt="Screenshot of the AI Hiking Guide showing generated trail information for a location" />
-          <div>
-            <h3>AI Hiking Guide</h3>
+          <div class="card-details" id="card-hiking">
             <p class="stack">JavaScript · AI API integration · Netlify</p>
             <p>
               Enter a location and the app calls an external AI API to generate a hiking guide for that area.
-                          Built to solve a problem I actually had, planning trails around Gunnison, Colorado.
+              Built to solve a problem I actually had, planning trails around Gunnison, Colorado.
             </p>
-            <a class="inline-link" href="https://ai-gunnisonpoem.netlify.app/">View the app</a>
+            <a class="inline-link" href="https://ai-gunnisonpoem.netlify.app/" target="_blank"
+              rel="noopener">View the app <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new
+                tab)</span></a>
           </div>
         </article>
 
-        <article class="project">
+        <article class="showcase-card">
+          <button class="card-toggle" type="button" aria-expanded="false" aria-controls="card-weather">
+            <svg viewBox="0 0 32 24" aria-hidden="true">
+              <path d="M10 1 4 11h3L2 19h7v4h2v-4h7l-5-8h3zM23 7l-4 7h2l-4 6h5v3h2v-3h5l-4-6h2z" />
+            </svg>
+            Weather Forecast
+          </button>
           <img src="src/images/Weather-App-Screenshot.jpeg"
             alt="Screenshot of the weather app showing current conditions and a five day forecast" />
-          <div>
-            <h3>Weather Forecast</h3>
+          <div class="card-details" id="card-weather">
             <p class="stack">JavaScript · REST API · Responsive design</p>
             <p>
               Live weather with a five day forecast, pulling from a REST API and parsing the response into a
-                          responsive layout that works on a phone.
+              responsive layout that works on a phone.
             </p>
-            <a class="inline-link" href="https://lemon-sage.netlify.app/">View the app</a>
+            <a class="inline-link" href="https://lemon-sage.netlify.app/" target="_blank"
+              rel="noopener">View the app <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new
+                tab)</span></a>
           </div>
         </article>
       </div>
@@ -397,11 +421,12 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>Katie Lunder, London. <a href="Webpages/contact.html">Get in touch</a>.</p>
+      <p>Katie Lunder, London. <a href="Webpages/contact.html">Get in touch</a> or find me on <a href="https://www.linkedin.com/in/katielunder" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>.</p>
     </div>
   </footer>
 
   <script src="src/theme.js"></script>
+  <script src="src/showcase.js"></script>
 </body>
 
 </html>
