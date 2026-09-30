@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Lunder;Katie;;;
+FN:Katie Lunder
+TITLE:Operations and Project Management
+EMAIL;TYPE=INTERNET:lunder.katie@gmail.com
+TEL;TYPE=CELL:+44XXXXXXXXXX
+URL:https://ktlund.netlify.app
+ADR;TYPE=WORK:;;;London;;;United Kingdom
+NOTE:MSc Project Management candidate, London South Bank University
+END:VCARD
